@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v1beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: nextcloud
@@ -6,9 +6,9 @@ metadata:
 spec:
   releaseName: nextcloud
   chart:
-    repository: https://nextcloud.github.io/helm/     # URL du référentiel Helm contenant le chart Nextcloud
+    repository: "https://nextcloud.github.io/helm/"     # URL du référentiel Helm contenant le chart Nextcloud
     name: nextcloud                    # Nom du chart Nextcloud
-    version: 26.0.2        # Version spécifique du chart Nextcloud à déployer
+    version: "26.0.2"        # Version spécifique du chart Nextcloud à déployer
   values:
     redis:
       enabled: true 
