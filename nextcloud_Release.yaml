@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v1beta1
 kind: HelmRelease
 metadata:
   name: nextcloud
@@ -18,8 +18,8 @@ spec:
        replica:
         persistence: 
          enabled: false
-  externalDatabase: 
-   enabled: false
-  internalDatabase: 
-   enabled: true 
-   name: nextcloud
+    externalDatabase: 
+     enabled: false
+    internalDatabase: 
+     enabled: true 
+     name: nextcloud
