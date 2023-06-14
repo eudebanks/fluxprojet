@@ -14,17 +14,18 @@ spec:
         namespace: flux-system
       version: "26.0.2"  # Remplacez par la version souhaitée de Nextcloud
   values:
-    deployment:
-      redis:
-        enabled: true 
-        master:
-         persistence: 
+    redis:
+      enabled: true 
+      master:
+        persistence: 
           enabled: false
-        replica:
-         persistence: 
+      replica:
+        persistence: 
           enabled: false
-      externalDatabase: 
-        enabled: false
-      internalDatabase: 
-        enabled: true 
-        name: nextcloud
+
+    externalDatabase: 
+      enabled: false
+    internalDatabase: 
+      enabled: true 
+      name: nextcloud
+  
