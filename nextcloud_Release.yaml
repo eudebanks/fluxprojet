@@ -4,22 +4,27 @@ metadata:
   name: nextcloud
   namespace: nextcloud
 spec:
-  releaseName: nextcloud
+  interval: 5m
   chart:
-    repository: "https://nextcloud.github.io/helm/"     # URL du référentiel Helm contenant le chart Nextcloud
-    name: nextcloud                    # Nom du chart Nextcloud
-    version: "26.0.2"        # Version spécifique du chart Nextcloud à déployer
+    spec:
+      chart: nextcloud
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud
+        namespace: flux-system
+      version: "26.0.2"  # Remplacez par la version souhaitée de Nextcloud
   values:
-    redis:
-      enabled: true 
-      master:
-        persistence: 
+    deployment:
+      redis:
+        enabled: true 
+        master:
+         persistence: 
           enabled: false
-      replica:
-        persistence: 
+        replica:
+         persistence: 
           enabled: false
-    externalDatabase: 
-      enabled: false
-    internalDatabase: 
-      enabled: true 
-      name: nextcloud
+      externalDatabase: 
+        enabled: false
+      internalDatabase: 
+        enabled: true 
+        name: nextcloud
