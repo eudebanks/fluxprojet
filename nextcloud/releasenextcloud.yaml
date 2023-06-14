@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: nextcloud
         namespace: flux-system
-      version: 26.0.2
+      version: "3.5.13"
   values:
     redis:
       enabled: true
